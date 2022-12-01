@@ -13,5 +13,6 @@ int whoWins(Map<String, int> teamA, Map<String, int> teamB) {
   numbB2 = numbB2 * 2;
   numbB3 = numbB3 * 3;
   var numbB = numbB1 + numbB2 + numbB3;
+  if (numbA == numbB) return 0;
   return numbA > numbB ? 1 : 2;
 }
