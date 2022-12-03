@@ -1,5 +1,5 @@
 class Password {
-  String _password = '';
+  String _password;
   Password({required String password}) : _password = password;
   String get password {
     return this._password;
@@ -18,7 +18,9 @@ class Password {
     bool checkNumber = false;
     for (int i = 0; i < password.length; i++) {
       if (password[i] == password[i].toUpperCase()) {
-        checkUppercase = true;
+        if (double.tryParse(password[i]) == null) {
+          checkUppercase = true;
+        }
       }
       if (password[i] == password[i].toLowerCase()) {
         checkLowercase = true;
@@ -27,12 +29,10 @@ class Password {
         checkNumber = true;
       }
     }
-    if ((checkUppercase == false) |
-        (checkLowercase == false) |
-        (checkNumber == false)) {
-      return false;
+    if (checkUppercase & checkLowercase & checkNumber) {
+      return true;
     }
-    return true;
+    return false;
   }
 
   @override
