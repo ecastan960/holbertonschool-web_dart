@@ -26,4 +26,9 @@ class Password {
     }
     return true;
   }
+
+  @override
+  String toString() {
+    return 'Your Password is: ${this.password}';
+  }
 }
