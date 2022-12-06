@@ -5,6 +5,6 @@ Future<void> getUser() async {
     var res = await fetchUser();
     print(res);
   } catch (err) {
-    print('Caught error: $err');
+    print('error caught: $err');
   }
 }
