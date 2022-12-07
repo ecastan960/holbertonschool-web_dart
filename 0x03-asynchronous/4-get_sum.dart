@@ -8,11 +8,9 @@ Future<double> calculateTotal() async {
     var id = user['id'];
     var product = await fetchUserOrders(id);
     double sum = 0;
-    var value = '';
     var products = json.decode(product);
     for (var i = 0; i < products.length; i++) {
-      value = await fetchProductPrice(products[i]);
-      sum += double.parse(value);
+      sum += json.decode(await fetchProductPrice(products[i]));
     }
     return sum;
   } catch (err) {
