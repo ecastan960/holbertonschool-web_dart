@@ -8,7 +8,7 @@ printRmCharacters() async {
     );
     var body = json.decode(res.body);
 
-    for (var i = 0; i < body['results'].length; i++) {
+    for (var i = 0; i < 17; i++) {
       print("${body['results'][i]['name']}");
     }
   } catch (err) {
